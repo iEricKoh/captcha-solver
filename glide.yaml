@@ -1,0 +1,4 @@
+package: captcha-solver
+import:
+- package: github.com/buger/jsonparser
+- package: github.com/iEricKoh/httpClient
