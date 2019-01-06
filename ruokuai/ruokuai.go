@@ -1,6 +1,7 @@
 package ruokuai
 
 import (
+	"log"
 	"os"
 
 	"github.com/buger/jsonparser"
@@ -35,6 +36,9 @@ func (r *Ruokuai) Resolve(typeId, softId string, pic *os.File) (string, error) {
 		},
 		Form: form,
 	})
+
+	log.Println("Captcha result...")
+	log.Println(jsonparser.GetString(resp.Body))
 
 	result, err := jsonparser.GetString(resp.Body, "Result")
 
